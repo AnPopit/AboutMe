@@ -1,22 +1,13 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import {Calendar} from "@skbkontur/react-ui";
+import React from "react";
 
-function App() {
-    const [message, setMessage] = useState('Загрузка...');
-
-    useEffect(() => {
-        fetch('/api/hello')
-            .then(res => res.json())
-            .then(data => setMessage(data.message))
-            .catch(err => setMessage('Ошибка получения данных'));
-    }, []);
-
+const Main = () => {
     return (
-        <div className="App">
-            <h1>Фронт + Бэк</h1>
-            <p>{message}</p>
+        <div>
+            <h2>Это страница ВТОРАЯ</h2>
+            <Calendar value={'01.01.2025'} onValueChange={(() => alert('ggg'))}></Calendar>
         </div>
-    );
+    )
 }
 
-export default App;
+export const PageTwo = () => Main();

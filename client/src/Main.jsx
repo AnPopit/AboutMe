@@ -1,25 +1,19 @@
-import { useEffect, useState } from 'react';
-import React from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { PageTwo } from './pages/Me.jsx';
+import { PageOne } from './pages/Kontur.jsx';
+import { PageMain } from './pages/MainPage.jsx';
+import  React from 'react';
 
-function Main() {
-    const [message, setMessage] = useState('Загрузка...');
-
-    useEffect(() => {
-        fetch('/api/hello')
-            .then(res => {
-                console.log(res)
-                return res.json()
-            })
-            .then(data => setMessage(data.message))
-            .catch(err => setMessage('Ошибка получения данных'));
-    }, []);
-
+const Main = () => {
     return (
-        <div className="App">
-            <h1>Фронт + Бэк</h1>
-            <p>{message}</p>
-        </div>
-    );
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<PageMain />} />
+                <Route path="/one" element={<PageOne />} />
+                <Route path="/two" element={<PageTwo />} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default Main;
