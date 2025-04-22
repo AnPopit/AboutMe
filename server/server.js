@@ -1,16 +1,15 @@
 const express = require('express');
-const cors = require('cors'); // 👈 добавили
-
+const path = require('path');
 const app = express();
-const PORT = 3001;
 
-app.use(cors()); // 👈 разрешаем все кросс-доменные запросы
-app.use(express.json());
+const distPath = path.join(__dirname, '..', 'client', 'dist');
 
-app.get('/api/hello', (req, res) => {
-    res.json({ message: 'Привет от сервера!' });
+app.use(express.static(distPath));
+
+app.get(/^\/.*/, (req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
 });
-
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`Сервер запущен на http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
