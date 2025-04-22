@@ -17,7 +17,7 @@ export const MainPage = () => (
     </header>
 <main>
     <section className='main'>
-        <p>Это тестовый проект для отрабтывание сборки webpack, базовой настройки сервера и React
+        <p>Это тестовый проект для отработки сборки webpack, базовой настройки сервера и React
         Router.
         </p>
     </section>
