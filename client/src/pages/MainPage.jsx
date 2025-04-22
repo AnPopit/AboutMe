@@ -1,12 +1,18 @@
+import { Link } from 'react-router-dom';
 import React from "react";
 
-const Main = () => {
-    return (
-        <div>
-            <h2>Это страница ГЛАВНАЯ</h2>
-
-        </div>
+export const MainPage = () => (
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <Link to="/one">Page One</Link>
+                </li>
+                <li>
+                    <Link to="/two">Page Two</Link>
+                </li>
+            </ul>
+        </nav>
+    </header>
     )
-}
-
-export const PageMain = () => Main();
+;
