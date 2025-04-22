@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 export const TwoPage = () => (
     <>
         <header>
-            <div className='header'>
+            <div className="header">
                 <Link to="/">На главную страницу</Link>
             </div>
         </header>
@@ -17,7 +17,7 @@ export const TwoPage = () => (
                 <dt>Библиотеки</dt>
                 <dd>i18 next, yup, toastify</dd>
                 <dt>Текущая книга</dt>
-                <dd>Книги серии "Вы не знаете JS"</dd>
+                <dd>Книги серии &apos;Вы не знаете JS&apos;</dd>
             </dl>
         </main>
     </>
